@@ -1,0 +1,24 @@
+{
+  "name": "awspush",
+  "version": "0.0.0",
+  "description": "a test of safari push from aws",
+  "main": "server.js",
+  "dependencies": {
+    "express": "~3.4.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mcfedr/awspush.git"
+  },
+  "author": "Fred Cox <mcfedr@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mcfedr/awspush/issues"
+  },
+  "homepage": "https://github.com/mcfedr/awspush"
+}
