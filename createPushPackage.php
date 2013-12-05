@@ -8,7 +8,7 @@
 
 
 $certificate_path = "cert.p12";     // Change this to the path where your certificate is located
-$certificate_password = ""; // Change this to the certificate's import password
+$certificate_password = "banana"; // Change this to the certificate's import password
 
 // Convenience function that returns an array of raw files needed to construct the package.
 function raw_files() {
@@ -47,6 +47,7 @@ function create_signature($package_dir, $cert_path, $cert_password) {
     $pkcs12 = file_get_contents($cert_path);
     $certs = array();
     if(!openssl_pkcs12_read($pkcs12, $certs, $cert_password)) {
+        echo "Error reading cert";
         return;
     }
 
@@ -61,9 +62,10 @@ function create_signature($package_dir, $cert_path, $cert_password) {
     $signature_pem = file_get_contents($signature_path);
     $matches = array();
     if (!preg_match('~Content-Disposition:[^\n]+\s*?([A-Za-z0-9+=/\r\n]+)\s*?-----~', $signature_pem, $matches)) {
+        echo "Error finding sign";
         return;
     }
-    $signature_der = base64_decode($matches[1]);
+    $signature_der = base64_decode(trim($matches[1]));
     file_put_contents($signature_path, $signature_der);
 }
 

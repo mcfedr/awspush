@@ -1,8 +1,8 @@
 {
     "websiteName": "AWS Pusher",
     "websitePushID": "web.co.fedr.awstest",
-    "allowedDomains": ["http://push.fedr.co"],
-    "urlFormatString": "http://push.fedr.co/%@",
-    "authenticationToken": "auseridstring",
-    "webServiceURL": "https://push.fedr.co/push"
+    "allowedDomains": ["https://fedr.co"],
+    "urlFormatString": "https://fedr.co/%@",
+    "authenticationToken": "abcdfehfjgktifkg",
+    "webServiceURL": "https://fedr.co/push"
 }

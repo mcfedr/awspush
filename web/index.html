@@ -6,32 +6,6 @@
     <body>
         <h1>AWS push test</h1>
         <div id="status"></div>
-        <script>
-        document.addEvent('DOMContentLoaded', function() {
-            var PUSH_ID = 'web.co.fedr.awspush',
-                WEB_SERVICE = 'https://push.fedr.co/push',
-                status = document.querySelector('#status');
-        
-            if(window.safari && window.safari.pushNotification) {
-                permsCheck();
-            }
-            else {
-                status.textContent = 'This only works in safari';
-            }
-        
-            function permsCheck() {
-                var perms = window.safari.pushNotification.permission(PUSH_ID);
-                if(perms.permission == 'default') {
-                    window.safari.pushNotification.requestPermission(WEB_SERVICE, PUSH_ID, {}, permsCheck);
-                }
-                else if(perms.permission == 'declined') {
-                    status.textContent = 'You disabled push';
-                }
-                else {
-                    status.textContent = 'Push is enabled, you device id is ' + perms.deviceToken;
-                }
-            }
-        });
-        </script>
+        <script src="index.js"></script>
     </body>
 </html>
